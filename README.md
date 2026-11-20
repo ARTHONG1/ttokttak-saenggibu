@@ -15,14 +15,15 @@ Intel Mac은 아직 지원하지 않습니다.
 
 ## 처음 켤 때 AI 모델을 한 번 받습니다
 
-설치 파일에는 앱만 들어 있고, AI 모델(똑딱AI 생기부 V7 B, 약 2.1GB)은 앱을 처음 켤 때 저절로 받습니다.
+설치 파일에는 앱만 들어 있고, AI 모델 **똑딱AI**(기본 모델과 생기부 어댑터, 두 파일 합쳐 약 2.16GB)는 앱을 처음 켤 때 저절로 받습니다. 똑딱AI는 [똑딱작업실](https://github.com/ARTHONG1/ttokttak-workspace)과 같은 모델입니다.
 
 - 인터넷 100Mbps에서 약 3분, 50Mbps에서 약 6분 걸립니다. 받는 동안에도 명렬표와 관찰 기록은 입력할 수 있고, AI 쓰기만 기다립니다.
 - 끊기거나 앱을 꺼도 다음에 받던 곳부터 이어 받습니다. 인터넷이 다시 연결되거나 컴퓨터가 잠자기에서 깨어나면 저절로 이어 받습니다. 받는 동안에는 컴퓨터가 스스로 잠들지 않습니다(덮개를 닫으면 잠듭니다).
 - 받은 파일은 정해진 해시(SHA256)와 맞을 때만 씁니다.
-- 한 번 받으면 그다음부터는 인터넷 없이 씁니다. 새 버전을 설치해도 모델은 다시 받지 않습니다.
+- 한 번 받으면 그다음부터는 인터넷 없이 씁니다. 모델이 그대로인 새 버전은 다시 받지 않습니다.
+- 0.2.x에서 0.3.0으로 올리면 모델이 바뀌어 약 2.16GB를 한 번 새로 받습니다. 옛 모델(약 2.08GB)은 새 파일을 다 받아 확인한 뒤 지웁니다.
 
-**학교망에서 받기가 막히면:** 다른 곳(집 등)에서 [모델 파일](https://github.com/ARTHONG1/ttokttak-saenggibu/releases/tag/model-v7b)(`ttokttak-saenggibu-v7b-Q8_0.gguf`)을 받아 USB 등으로 옮긴 뒤, 앱 위쪽의 **[파일로 넣기]**로 넣으세요.
+**학교망에서 받기가 막히면:** 다른 곳(집 등)에서 [모델 릴리스](https://github.com/ARTHONG1/ttokttak-workspace/releases/tag/model-20261120-2)의 두 파일(`ddak-base-qwen3.5-2b-Q8_0.gguf`, `ddak-school-record-adapter.gguf`)을 받아 USB 등으로 옮긴 뒤, 앱 위쪽의 **[파일로 넣기]**에서 두 파일을 함께 고르세요.
 
 ## 설치
 
@@ -30,7 +31,7 @@ Intel Mac은 아직 지원하지 않습니다.
 
 **Windows:** Setup 파일을 실행합니다. 코드 서명이 없어 "Windows의 PC 보호" 창이 뜨면 **[추가 정보] → [실행]**을 누르세요.
 
-새 버전은 같은 방법으로 덮어 설치하면 됩니다. 쓰던 설정·임시 저장한 작업·받은 모델은 그대로 남습니다. 자동 업데이트는 아직 없습니다.
+새 버전은 같은 방법으로 덮어 설치하면 됩니다. 쓰던 설정과 임시 저장한 작업은 그대로 남습니다. 자동 업데이트는 아직 없습니다.
 
 ## 할 수 있는 것
 
@@ -52,5 +53,5 @@ Intel Mac은 아직 지원하지 않습니다.
 ## 라이선스와 출처
 
 - 앱: Apache License 2.0 ([LICENSE](LICENSE), [NOTICE](NOTICE)). 소스는 [똑딱작업실 저장소의 apps/saenggibu](https://github.com/ARTHONG1/ttokttak-workspace/tree/main/apps/saenggibu)에 있습니다.
-- AI 모델: 똑딱AI 생기부 V7 B. [Qwen3.5-2B](https://huggingface.co/Qwen/Qwen3.5-2B)(Apache-2.0)를 가상 학생 사례로 추가 학습한 모델입니다. 자세한 내용은 [모델 릴리스](https://github.com/ARTHONG1/ttokttak-saenggibu/releases/tag/model-v7b)에 있습니다.
+- AI 모델: 똑딱AI. 바꾸지 않은 [Qwen3.5-2B](https://huggingface.co/Qwen/Qwen3.5-2B)(Apache-2.0) Q8 기본 모델에, 가상 학생 사례로 학습한 생기부 어댑터를 켜서 씁니다. 자세한 내용은 [모델 릴리스](https://github.com/ARTHONG1/ttokttak-workspace/releases/tag/model-20261120-2)에 있습니다.
 - 실행기: [llama.cpp](https://github.com/ggml-org/llama.cpp) (MIT).
